@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+
+<html>
+<body>
+    <style>
+        * {
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #mainWrapper {
+            background-image: url({background_image});
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 856px 856px;
+        }
+
+        #welcomePage {
+            text-align: center;
+        }
+
+        #welcomMsg {
+            background-color: #a93339;
+            color: white;
+            box-shadow: 2px 2px 2px #9b9b9b;
+            padding: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            padding-top: 25px;
+        }
+
+        #reportData {
+            padding-top: 10px;
+        }
+
+        #grid-container1 {
+            margin-left: 30px;
+        }
+
+        #dateCard {
+            background-color: #a93339;
+            width: 170px;
+            height: 70px;
+            color: white;
+            text-align: center;
+            box-shadow: 2px 2px 2px #9b9b9b;
+        }
+
+        .empTableData {
+            border: none;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .empHeader {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .squaresHeader {
+            background-color: black;
+            color: white;
+            padding: 2px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .squaresData {
+            text-align: center;
+        }
+
+        #photoLog {
+            padding: 10px;
+        }
+
+        #photoWrapper {
+            text-align: center;
+            margin-left: 25px;
+        }
+
+        .photoColumn {
+            align-content: center;
+            page-break-inside: avoid;
+            text-align: center;
+        }
+
+        .photoContent {
+            max-width: 240px;
+            max-height: 320px;
+        }
+
+        .labelBanner {
+            background-color: #a93339;
+            color: white;
+            width: 90%;
+            height: 25px;
+            text-align: center;
+            padding: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 2px #9b9b9b;
+        }
+
+        .photoNumberContainer {
+            border-radius: 100%;
+            background-color: #a93339;
+            box-shadow: 2px 2px 2px #9b9b9b;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: white;
+            vertical-align: middle;
+        }
+
+        .photoNbrTxt {
+            vertical-align: middle;
+            padding-top: 2px;
+        }
+
+        .pagebreaksBefore {
+            page-break-before: always;
+        }
+
+        .tab {
+            margin-left: 20px;
+        }
+
+        #squaresOverview p{
+            margin-bottom: 2em;
+        }
+    </style>
+    <div id='mainWrapper'>
+        <div id='reportData' class="pagebreaksBefore">
+            <h3 class='labelBanner'>Weekly Report</h3>
+            <br /><br />
+            <div id='grid-container1'>
+                <div id='empData'>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td style="width:10%;">&nbsp;</td>
+                                <td style="width:45%;" class="empHeader">Project Manager</td>
+                                <td style="width:45%;" class="empHeader">Asst. Project Manager</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Name:</strong></td>
+                                <td class='empTableData'>{pm_name}</td>
+                                <td class='empTableData'>{apm_name}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phone:</strong></td>
+                                <td class='empTableData'>{pm_phone}</td>
+                                <td class='empTableData'>{apm_phone}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email:</strong></td>
+                                <td class='empTableData'>{pm_email}</td>
+                                <td class='empTableData'>{apm_email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br />
+                <div id='empData'>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td style="width:100%;" colspan="4" class="empHeader">VP & Director Contacts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Name:</strong></td>
+                                <td class='empTableData'>{vp_name}</td>
+                                <td class='empTableData'>{sdr_name}</td>
+                                <td class='empTableData'>{mdr_name}</td>
+                            </tr>
+                            <tr>
+                                <td width="22%"><strong>Title:</strong></td>
+                                <td width="26%" class='empTableData'>{vp_title}</td>
+                                <td width="26%" class='empTableData'>{sdr_title}</td>
+                                <td width="26%" class='empTableData'>{mdr_title}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phone:</strong></td>
+                                <td class='empTableData'>{vp_phone}</td>
+                                <td class='empTableData'>{sdr_phone}</td>
+                                <td class='empTableData'>{mdr_phone}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email:</strong></td>
+                                <td class='empTableData'>{vp_email}</td>
+                                <td class='empTableData'>{sdr_email}</td>
+                                <td class='empTableData'>{mdr_phone}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br />
+                <div id='squaresComplete'>
+                    <div id='squaresOverview'>
+                        <p><strong>Project Type: </strong>{job_type}</p>
+                        <p><strong>Project Size (Sq.Ft): </strong>{job_size}</p>
+                        <p><strong>Estimated Completion Date: </strong>{est_completion_date}</p>
+                        <p><strong>Percent Complete: </strong>{percent_complete}</p>
+                        <br />
+                        <p><strong>*** 1 Square = 100 Square Feet ***</strong></p>
+                    </div>
+                    <br />
+                    <div id='squaresTable'>
+                        <table cellpadding="0" cellspacing="20">
+                            <tr>
+                                <td class='squaresHeader'>Squares installed this week </td>
+                                <td class='squaresData'>{squares_installed}</td>
+                            </tr>
+                            <tr>
+                                <td class='squaresHeader'>Total squares installed to date</td>
+                                <td class='squaresData'>{total_squares}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {photos_page}
+    </div>
+</body>
+</html>
